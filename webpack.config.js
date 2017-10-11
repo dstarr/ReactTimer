@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -18,7 +17,8 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: "babel-loader"
+                loader: "babel-loader",
+                query: {compact: false}
             },
 
             // Used for Bootstrap Less Source Files
@@ -37,14 +37,5 @@ module.exports = {
                 loader: 'file'
             }
         ]
-    },
-
-    // resolve: {
-    //     // the folders where webpack will look for modules and JS code to bundle should
-    //     // it be imported into the application
-    //     modulesDirectories: [
-    //         'components', 'node_modules'
-    //     ],
-    //     extensions: ['', '.json', '.js']
-    // }
+    }
 };
