@@ -5,12 +5,11 @@ class TimeRemaining extends React.Component {
     constructor(props) {
         super(props);
 
-        //this.formatNumber = this.formatNumber.bind(this);
     }
 
     formatNumber = (number) => {
 
-        if(number.length > 1)
+        if (number.length > 1)
             return number;
 
         number = "0" + number;

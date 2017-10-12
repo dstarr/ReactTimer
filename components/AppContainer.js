@@ -1,6 +1,7 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/lib/Jumbotron'
+import Well from 'react-bootstrap/lib/Well'
 import TimeRemaining from './TimeRemaining'
+import ModifyTimeButtons from './ModifyTimeButtons'
 
 class AppContainer extends React.Component {
 
@@ -11,22 +12,25 @@ class AppContainer extends React.Component {
     render = () => {
 
         const jumboStyle = {
-            textAlign:'center'
+            textAlign: 'center'
         };
 
         const colonStyle = {
-            fontSize:200,
+            fontSize: 200,
             color: 'blue',
 
         };
 
         return (
-            <Jumbotron>
-                <h1 bsClass="jumbotron" style={jumboStyle}>
-                    <TimeRemaining minutes="0" seconds="0"/>
+            <div>
+                <Well>
+                    <h1 bsClass="jumbotron" style={jumboStyle}>
+                        <TimeRemaining minutes="0" seconds="0"/>
+                    </h1>
+                </Well>
 
-                </h1>
-            </Jumbotron>
+                <ModifyTimeButtons />
+            </div>
 
         );
     }
