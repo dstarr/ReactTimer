@@ -18,17 +18,37 @@ class ModifyTimeButtons extends React.Component {
             width: 500
         };
 
-        const colStyle = {
-            align: 'right'
+
+        const leftStyle = {
+            textAlign:'left',
+            borderColor: 'black',
+            borderWidth: 3,
+            borderStyle: 'solid',
+
         };
 
+        const rightStyle = {
+            textAlign: 'right',
+            borderColor: 'black',
+            borderWidth: 3,
+            borderStyle: 'solid',
+        };
 
         return (
 
-            <div align="center">
-                <Button style={colStyle} bsStyle="primary" block>Do Something</Button>
-                <Button style={colStyle} bsStyle="primary" block>Do Something</Button>
-            </div>
+            <Grid style={gridStyle}>
+
+                <Row>
+                    <Col lg={5} style={leftStyle}>
+                        <Button bsStyle="primary">Do Something</Button>
+                    </Col>
+                    <Col lg={2}></Col>
+                    <Col lg={5} style={rightStyle}>
+                        <Button bsStyle="primary">Do Something</Button>
+                    </Col>
+                </Row>
+
+            </Grid>
 
         );
     }
