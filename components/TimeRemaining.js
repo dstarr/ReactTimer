@@ -43,5 +43,5 @@ export default class TimeRemaining extends React.Component {
 
 const countDownNumberStyle = {
     color: 'blue',
-    fontSize: 200,
+    fontSize: '500%',
 };

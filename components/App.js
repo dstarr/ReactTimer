@@ -7,5 +7,3 @@ const node1 = document.getElementById('app');
 if (node1) {
     ReactDOM.render( <AppContainer/>, node1);
 }
-
-

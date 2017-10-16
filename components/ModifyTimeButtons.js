@@ -15,6 +15,8 @@ class ModifyTimeButtons extends React.Component {
     render = () => {
 
         return (
+
+
             <div>
                 <div>
                     <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-300)}}>- 5 minutes</Button>
