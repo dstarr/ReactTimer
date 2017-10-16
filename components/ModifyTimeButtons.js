@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Grid, Row, Col} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 class ModifyTimeButtons extends React.Component {
 
@@ -10,48 +10,64 @@ class ModifyTimeButtons extends React.Component {
 
     render = () => {
 
-        const gridStyle = {
-            align: 'center',
-            borderColor: 'red',
-            borderWidth: 3,
-            borderStyle: 'solid',
-            width: 500
-        };
-
-
-        const leftStyle = {
-            textAlign:'left',
-            borderColor: 'black',
-            borderWidth: 3,
-            borderStyle: 'solid',
-
-        };
-
-        const rightStyle = {
-            textAlign: 'right',
-            borderColor: 'black',
-            borderWidth: 3,
-            borderStyle: 'solid',
-        };
-
         return (
 
-            <Grid style={gridStyle}>
 
-                <Row>
-                    <Col lg={5} style={leftStyle}>
-                        <Button bsStyle="primary">Do Something</Button>
-                    </Col>
-                    <Col lg={2}></Col>
-                    <Col lg={5} style={rightStyle}>
-                        <Button bsStyle="primary">Do Something</Button>
-                    </Col>
-                </Row>
 
-            </Grid>
+            <table style={gridStyle}>
+                <tr>
+                    <td align="left">
+                        <Button style={buttonStyle} bsStyle="primary">- 5 minutes</Button>
+                    </td>
+                    <td align="right">
+                        <Button style={buttonStyle} bsStyle="primary">+ 5 minutes</Button>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <Button style={buttonStyle} bsStyle="primary">- 1 minutes</Button>
+                    </td>
+                    <td align="right">
+                        <Button style={buttonStyle} bsStyle="primary">+ 1 minutes</Button>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <Button style={buttonStyle} bsStyle="primary">- 30 seconds</Button>
+                    </td>
+                    <td align="right">
+                        <Button style={buttonStyle} bsStyle="primary">+ 30 seconds</Button>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <Button style={buttonStyle} bsStyle="primary">- 10 seconds</Button>
+                    </td>
+                    <td align="right">
+                        <Button style={buttonStyle} bsStyle="primary">+ 10 seconds</Button>
+                    </td>
+                </tr>
+            </table>
+
 
         );
     }
 }
+
+const gridStyle = {
+    align: 'center',
+    borderColor: 'grey',
+    borderWidth: 3,
+    borderStyle: 'solid',
+
+    width: 550
+};
+
+const buttonStyle = {
+    height: 60,
+    width: 200,
+    fontSize: 24,
+    margin: 10
+};
 
 export default ModifyTimeButtons;

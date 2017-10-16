@@ -2,8 +2,9 @@ import React from 'react';
 import Well from 'react-bootstrap/lib/Well'
 import TimeRemaining from './TimeRemaining'
 import ModifyTimeButtons from './ModifyTimeButtons'
+import StartStopButton from './StartStopButton'
 
-class AppContainer extends React.Component {
+export default class AppContainer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -11,29 +12,22 @@ class AppContainer extends React.Component {
 
     render = () => {
 
-        const jumboStyle = {
-            textAlign: 'center'
-        };
-
-        const colonStyle = {
-            fontSize: 200,
-            color: 'blue',
-
-        };
-
         return (
-            <div>
+            <div align="center">
                 <Well>
-                    <h1 bsClass="jumbotron" style={jumboStyle}>
+                    <h1 bsSize="large">
                         <TimeRemaining minutes="0" seconds="0"/>
                     </h1>
                 </Well>
 
+
                 <ModifyTimeButtons />
+
+                <StartStopButton ticking={false}/>
             </div>
 
         );
     }
 }
 
-export default AppContainer;
+

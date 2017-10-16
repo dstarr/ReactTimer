@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TimeRemaining extends React.Component {
+export default class TimeRemaining extends React.Component {
 
     constructor(props) {
         super(props);
@@ -32,18 +32,16 @@ class TimeRemaining extends React.Component {
 
     render = () => {
 
-        const style = {
-            color: 'blue',
-            fontSize: 200,
-        };
-
         return (
 
-            <div style={style}>
+            <div style={countDownNumberStyle}>
                 {this.state.minutes}:{this.state.seconds}
             </div>
         );
     }
 }
 
-export default TimeRemaining;
+const countDownNumberStyle = {
+    color: 'blue',
+    fontSize: 200,
+};
