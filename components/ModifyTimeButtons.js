@@ -7,61 +7,35 @@ class ModifyTimeButtons extends React.Component {
         super(props);
     }
 
+    onButtonClick = (seconds) => {
+        alert(seconds)
+    };
+
 
     render = () => {
 
         return (
-
-
-
-            <table style={gridStyle}>
-                <tr>
-                    <td align="left">
-                        <Button style={buttonStyle} bsStyle="primary">- 5 minutes</Button>
-                    </td>
-                    <td align="right">
-                        <Button style={buttonStyle} bsStyle="primary">+ 5 minutes</Button>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <Button style={buttonStyle} bsStyle="primary">- 1 minutes</Button>
-                    </td>
-                    <td align="right">
-                        <Button style={buttonStyle} bsStyle="primary">+ 1 minutes</Button>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <Button style={buttonStyle} bsStyle="primary">- 30 seconds</Button>
-                    </td>
-                    <td align="right">
-                        <Button style={buttonStyle} bsStyle="primary">+ 30 seconds</Button>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <Button style={buttonStyle} bsStyle="primary">- 10 seconds</Button>
-                    </td>
-                    <td align="right">
-                        <Button style={buttonStyle} bsStyle="primary">+ 10 seconds</Button>
-                    </td>
-                </tr>
-            </table>
-
-
+            <div>
+                <div>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-300)}}>- 5 minutes</Button>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(300)}}>+ 5 minutes</Button>
+                </div>
+                <div>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-60)}}>- 1 minutes</Button>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(60)}}>+ 1 minutes</Button>
+                </div>
+                <div>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-30)}}>- 30 seconds</Button>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(30)}}>+ 30 seconds</Button>
+                </div>
+                <div>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-10)}}>- 10 seconds</Button>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(10)}}>+ 10 seconds</Button>
+                </div>
+            </div>
         );
     }
 }
-
-const gridStyle = {
-    align: 'center',
-    borderColor: 'grey',
-    borderWidth: 3,
-    borderStyle: 'solid',
-
-    width: 550
-};
 
 const buttonStyle = {
     height: 60,

@@ -19,8 +19,6 @@ export default class StartStopButton extends React.Component {
         this.setState({
             buttonTitle: title
         });
-
-
     };
 
     render = () => {
