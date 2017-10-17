@@ -11,23 +11,34 @@ export default class AppContainer extends React.Component {
         super(props);
     }
 
+    onTimeChange = (seconds) => {
+        alert("Got it " + seconds)
+    };
+
+    componentWillMount = () => {
+        this.setState({
+            minutesLeft: '0',
+            secondsLeft: '0'
+        });
+    };
+
+
     render = () => {
 
         return (
             <div align="center">
                 <Well>
                     <h1 bsSize="large">
-                        <TimeRemaining minutes="0" seconds="0"/>
+                        <TimeRemaining minutes={this.state.minutesLeft} seconds={this.state.secondsLeft}/>
                     </h1>
                 </Well>
 
 
-                <ModifyTimeButtons />
+                <ModifyTimeButtons changeTime={this.onTimeChange}/>
 
                 <ResetButton ticking={false}/>
                 <StartStopButton ticking={false}/>
             </div>
-
         );
     }
 }

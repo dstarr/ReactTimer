@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 class ModifyTimeButtons extends React.Component {
 
@@ -8,7 +9,7 @@ class ModifyTimeButtons extends React.Component {
     }
 
     onButtonClick = (seconds) => {
-        alert(seconds)
+        this.props.changeTime(seconds);
     };
 
 
@@ -45,5 +46,11 @@ const buttonStyle = {
     fontSize: 24,
     margin: 10
 };
+
+ModifyTimeButtons.PropTypes = {
+    changeTime: PropTypes.func.isRequired
+};
+
+
 
 export default ModifyTimeButtons;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TimeRemaining extends React.Component {
 
@@ -8,6 +9,8 @@ export default class TimeRemaining extends React.Component {
     }
 
     formatNumber = (number) => {
+
+        //alert("L: " + number);
 
         if (number.length > 1)
             return number;
@@ -44,4 +47,9 @@ export default class TimeRemaining extends React.Component {
 const countDownNumberStyle = {
     color: 'blue',
     fontSize: '500%',
+};
+
+TimeRemaining.PropTypes = {
+    minutes: PropTypes.string.isRequired,
+    seconds: PropTypes.string.isRequired
 };
