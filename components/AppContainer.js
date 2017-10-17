@@ -18,6 +18,32 @@ export default class AppContainer extends React.Component {
 
     onStartButtonClick = () => {
 
+        if(!this.state.ticking) {
+            this.timer = setInterval(this.tickDown, 1000);
+
+            this.setState({
+                ticking: true
+            });
+
+            return;
+        }
+
+
+
+        if(this.state.ticking) {
+            clearInterval(this.timer)
+
+            this.setState({
+                ticking: false
+            });
+        }
+
+
+
+    };
+
+    tickDown = () => {
+        this.onTimeChange(-1);
     };
 
     onTimeChange = (seconds) => {

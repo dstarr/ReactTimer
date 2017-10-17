@@ -7,15 +7,17 @@ export default class StartStopButton extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            buttonTitle: 'Start'
+        }
     }
 
-    componentWillMount = () => {
+    componentWillReceiveProps = (nextProps) => {
 
         let title = "Start";
 
-        if (this.props.ticking)
+        if (nextProps.ticking)
             title = "Pause";
-
 
         this.setState({
             buttonTitle: title
@@ -26,7 +28,7 @@ export default class StartStopButton extends React.Component {
 
         if (this.props.enabled)
             return (
-                <Button style={buttonStyle}>{this.state.buttonTitle}</Button>
+                <Button style={buttonStyle} onClick={this.props.onClicked}>{this.state.buttonTitle}</Button>
             );
 
         return (
@@ -46,5 +48,5 @@ const buttonStyle = {
 StartStopButton.PropTypes = {
     ticking: PropTypes.bool.isRequired,
     enabled: PropTypes.bool.isRequired,
-    onClick: PropTypes.func.isRequired
+    onClicked: PropTypes.func.isRequired
 };
