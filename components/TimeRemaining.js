@@ -14,8 +14,6 @@ export default class TimeRemaining extends React.Component {
 
     formatNumber = (number) => {
 
-        //alert("L: " + number);
-
         if (number.length > 1)
             return number;
 

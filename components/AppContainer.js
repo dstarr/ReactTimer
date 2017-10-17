@@ -9,18 +9,12 @@ export default class AppContainer extends React.Component {
 
     constructor(props) {
         super(props);
-    }
 
-    onTimeChange = (seconds) => {
-        alert("Got it " + seconds)
-    };
-
-    componentWillMount = () => {
-        this.setState({
+        this.state = {
             secondsLeft: 0,
-            ticking:false
-        });
-    };
+            ticking: false
+        };
+    }
 
     onStartButtonClick = () => {
 
@@ -28,17 +22,22 @@ export default class AppContainer extends React.Component {
 
     onTimeChange = (seconds) => {
 
-
         let sec = this.state.secondsLeft + seconds;
 
-        if(sec < 0)
+        if (sec < 0)
             sec = 0;
 
-        if(sec > 3600)
-            sec=3600;
+        if (sec > 3600)
+            sec = 3600;
 
         this.setState({
             secondsLeft: sec
+        });
+    };
+
+    onTimeReset = () => {
+        this.setState({
+            secondsLeft: 0
         });
     };
 
@@ -55,20 +54,18 @@ export default class AppContainer extends React.Component {
 
                 <ModifyTimeButtons changeTime={this.onTimeChange}/>
 
-                <ResetButton ticking={this.state.ticking}/>
+                <ResetButton ticking={this.state.ticking}
+                             secondsLeft={this.state.secondsLeft}
+                             resetTime={this.onTimeReset}
+                />
 
                 <StartStopButton ticking={this.state.ticking}
+                                 enabled={this.state.secondsLeft > 0}
                                  onClicked={this.onStartButtonClick}
-                                 enabled={this.state.secondsLeft > 0}/>
+                />
             </div>
         );
     }
 }
-
-// const outerDiv = {
-//     textAlign:'center',
-//     align: 'center',
-//     width: 550
-// };
 
 
