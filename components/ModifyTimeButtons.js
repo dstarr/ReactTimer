@@ -20,6 +20,10 @@ class ModifyTimeButtons extends React.Component {
 
             <div>
                 <div>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-600)}}>- 10 minutes</Button>
+                    <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(600)}}>+ 10 minutes</Button>
+                </div>
+                <div>
                     <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(-300)}}>- 5 minutes</Button>
                     <Button style={buttonStyle} bsStyle="primary" onClick={() => {this.onButtonClick(300)}}>+ 5 minutes</Button>
                 </div>
