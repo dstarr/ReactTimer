@@ -17,36 +17,58 @@ export default class AppContainer extends React.Component {
 
     componentWillMount = () => {
         this.setState({
-            minutesLeft: '0',
-            secondsLeft: '0'
+            secondsLeft: 0,
+            ticking:false
         });
     };
 
+    onStartButtonClick = () => {
+
+    };
+
+    onTimeChange = (seconds) => {
+
+
+        let sec = this.state.secondsLeft + seconds;
+
+        if(sec < 0)
+            sec = 0;
+
+        if(sec > 3600)
+            sec=3600;
+
+        this.setState({
+            secondsLeft: sec
+        });
+    };
 
     render = () => {
 
         return (
             <div align="center">
                 <Well>
-                    <h1 bsSize="large">
-                        <TimeRemaining minutes={this.state.minutesLeft} seconds={this.state.secondsLeft}/>
+                    <h1>
+                        <TimeRemaining seconds={this.state.secondsLeft}/>
                     </h1>
                 </Well>
 
 
                 <ModifyTimeButtons changeTime={this.onTimeChange}/>
 
-                <ResetButton ticking={false}/>
-                <StartStopButton ticking={false}/>
+                <ResetButton ticking={this.state.ticking}/>
+
+                <StartStopButton ticking={this.state.ticking}
+                                 onClicked={this.onStartButtonClick}
+                                 enabled={this.state.secondsLeft > 0}/>
             </div>
         );
     }
 }
 
-const outerDiv = {
-    textAlign:'center',
-    align: 'center',
-    width: 550
-}
+// const outerDiv = {
+//     textAlign:'center',
+//     align: 'center',
+//     width: 550
+// };
 
 

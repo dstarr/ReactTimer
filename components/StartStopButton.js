@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap'
+import PropTypes from 'prop-types';
 
 export default class StartStopButton extends React.Component {
 
@@ -23,9 +24,15 @@ export default class StartStopButton extends React.Component {
 
     render = () => {
 
+        if(this.props.enabled)
+            return (
+                <Button style={buttonStyle} enabled>{this.state.buttonTitle}</Button>
+            );
+
         return (
-            <Button style={buttonStyle}>{this.state.buttonTitle}</Button>
+            <Button style={buttonStyle} disabled>{this.state.buttonTitle}</Button>
         );
+
 
     }
 }
@@ -37,3 +44,8 @@ const buttonStyle = {
     margin: 10
 };
 
+StartStopButton.PropTypes = {
+    ticking: PropTypes.bool.isRequired,
+    enabled: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired
+};

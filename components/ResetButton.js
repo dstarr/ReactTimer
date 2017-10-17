@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 
 export default class ResetButton extends React.Component {
 
@@ -24,15 +24,13 @@ export default class ResetButton extends React.Component {
 
         if(this.props.ticking) {
            return (
-                <Button enabled={this.props.ticking} style={buttonStyle}>Reset</Button>
+                <Button enabled={String(this.props.ticking)} style={buttonStyle}>Reset</Button>
             );
         }
 
         return (
-            <Button enabled={this.props.ticking} style={buttonStyle} disabled>Reset</Button>
+            <Button enabled={String(this.props.ticking)} style={buttonStyle} disabled>Reset</Button>
         );
-
-
     }
 }
 

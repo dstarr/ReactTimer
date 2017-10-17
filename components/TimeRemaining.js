@@ -6,6 +6,10 @@ export default class TimeRemaining extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            minutes: '00',
+            seconds: '00'
+        };
     }
 
     formatNumber = (number) => {
@@ -21,14 +25,19 @@ export default class TimeRemaining extends React.Component {
 
     };
 
-    componentWillMount = () => {
+    componentWillReceiveProps = (nextProps) => {
 
-        const min = this.formatNumber(this.props.minutes);
-        const sec = this.formatNumber(this.props.seconds);
+        const seconds = nextProps.seconds;
+
+        let sec = String(seconds % 60);
+        let min = String(Math.floor(seconds/60));
+
+        sec = this.formatNumber(sec);
+        min = this.formatNumber(min);
 
         this.setState({
-            minutes: min,
-            seconds: sec
+            seconds: sec,
+            minutes: min
         });
 
     };
@@ -50,6 +59,5 @@ const countDownNumberStyle = {
 };
 
 TimeRemaining.PropTypes = {
-    minutes: PropTypes.string.isRequired,
-    seconds: PropTypes.string.isRequired
+    seconds: PropTypes.number.isRequired
 };
