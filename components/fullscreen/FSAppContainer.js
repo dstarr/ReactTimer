@@ -14,8 +14,6 @@ export default class FSAppContainer extends Base {
 
                 <FSTimeRemaining seconds={this.state.secondsLeft}/>
 
-                <FSModifyTimeButtons changeTime={this.onTimeChange}/>
-
                 <FSResetButton ticking={this.state.ticking}
                                secondsLeft={this.state.secondsLeft}
                                resetTime={this.onTimeReset}
@@ -25,6 +23,10 @@ export default class FSAppContainer extends Base {
                                    enabled={this.state.secondsLeft > 0}
                                    onClicked={this.onStartButtonClick}
                 />
+
+                <FSModifyTimeButtons changeTime={this.onTimeChange}/>
+
+
             </div>
         );
     }
