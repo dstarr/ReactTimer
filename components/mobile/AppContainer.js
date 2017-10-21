@@ -1,5 +1,6 @@
 import React from 'react';
 import Base from '../AppContainerBase'
+import Well from 'react-bootstrap/lib/Well'
 import TimeRemaining from './TimeRemaining'
 import ModifyTimeButtons from './ModifyTimeButtons'
 import StartStopButton from './StartStopButton'
@@ -11,8 +12,12 @@ export default class AppContainer extends Base {
 
         return (
             <div align="center">
+                <Well>
+                    <h1>
+                        <TimeRemaining seconds={this.state.secondsLeft}/>
+                    </h1>
+                </Well>
 
-                <TimeRemaining seconds={this.state.secondsLeft}/>
 
                 <ModifyTimeButtons changeTime={this.onTimeChange}/>
 

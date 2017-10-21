@@ -43,6 +43,7 @@ export default class TimeRemaining extends React.Component {
     render = () => {
 
         return (
+
             <div style={countDownNumberStyle}>
                 {this.state.minutes}:{this.state.seconds}
             </div>
@@ -51,7 +52,7 @@ export default class TimeRemaining extends React.Component {
 }
 
 const countDownNumberStyle = {
-    color: 'green',
+    color: 'blue',
     fontSize: '500%',
 };
 

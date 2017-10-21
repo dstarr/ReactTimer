@@ -15,7 +15,8 @@
     "prop-types": "latest",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-responsive": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

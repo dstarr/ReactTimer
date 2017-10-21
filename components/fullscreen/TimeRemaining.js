@@ -28,7 +28,7 @@ export default class TimeRemaining extends React.Component {
         const seconds = nextProps.seconds;
 
         let sec = String(seconds % 60);
-        let min = String(Math.floor(seconds/60));
+        let min = String(Math.floor(seconds / 60));
 
         sec = this.formatNumber(sec);
         min = this.formatNumber(min);
@@ -44,16 +44,18 @@ export default class TimeRemaining extends React.Component {
 
         return (
 
-            <div style={countDownNumberStyle}>
-                {this.state.minutes}:{this.state.seconds}
-            </div>
+                <div style={countDownNumberStyle}>
+                    {this.state.minutes}:{this.state.seconds}
+                </div>
+
         );
     }
 }
 
 const countDownNumberStyle = {
-    color: 'blue',
-    fontSize: '500%',
+    color: '#2865A8',
+    fontSize: '175',
+    fontWeight: 'bold'
 };
 
 TimeRemaining.PropTypes = {
