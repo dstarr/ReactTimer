@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class TimeRemaining extends React.Component {
+export default class TimeRemainingBase extends React.Component {
 
     constructor(props) {
         super(props);
@@ -39,25 +39,8 @@ export default class TimeRemaining extends React.Component {
         });
 
     };
-
-    render = () => {
-
-        return (
-
-                <div style={countDownNumberStyle}>
-                    {this.state.minutes}:{this.state.seconds}
-                </div>
-
-        );
-    }
 }
 
-const countDownNumberStyle = {
-    color: '#2865A8',
-    fontSize: '175',
-    fontWeight: 'bold'
-};
-
-TimeRemaining.PropTypes = {
+TimeRemainingBase.PropTypes = {
     seconds: PropTypes.number.isRequired
 };
