@@ -76,10 +76,6 @@ export default class AppContainer extends React.Component {
                         <TimeRemaining seconds={this.state.secondsLeft}/>
                     </h1>
                 </Well>
-
-
-                <ModifyTimeButtons changeTime={this.onTimeChange}/>
-
                 <ResetButton ticking={this.state.ticking}
                              secondsLeft={this.state.secondsLeft}
                              resetTime={this.onTimeReset}
@@ -89,6 +85,10 @@ export default class AppContainer extends React.Component {
                                  enabled={this.state.secondsLeft > 0}
                                  onClicked={this.onStartButtonClick}
                 />
+
+                <ModifyTimeButtons changeTime={this.onTimeChange}/>
+
+
             </div>
         );
     }
