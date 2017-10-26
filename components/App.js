@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DTAppContainer from './desktop/AppContainer';
+import DTAppContainer from './base/AppContainerBase';
 import PhoneAppContainer from './phone/AppContainer';
 
 import MediaQuery from 'react-responsive';

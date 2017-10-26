@@ -40,11 +40,20 @@ export default class TimeRemainingBase extends React.Component {
 
     };
 
+    getDivStyle = () => {
+        return {
+            backgroundColor: '#cfcfcf',
+            color: '#2865A8',
+            fontSize: '1000%',
+            fontWeight: 'bold'
+        }
+    };
+
     render = () => {
 
         return (
 
-            <div style={this.getStyle()}>
+            <div style={this.getDivStyle()}>
                 {this.state.minutes}:{this.state.seconds}
             </div>
 
