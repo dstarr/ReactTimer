@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap'
 import Base from '../base/StartStopButtonBase'
 
 
-export default class StartStopButton extends Base {
+export default class FSStartStopButton extends Base {
 
     render = () => {
 

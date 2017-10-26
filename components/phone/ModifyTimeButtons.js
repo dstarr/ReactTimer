@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Base from '../base/ModifyTimeButtonsBase';
 
-export default class ModifyTimeButtons extends Base {
+export default class FSModifyTimeButtons extends Base {
 
     render = () => {
 

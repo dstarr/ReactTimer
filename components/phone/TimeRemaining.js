@@ -1,7 +1,7 @@
 import React from 'react';
 import Base from '../base/TimeRemainingBase';
 
-export default class TimeRemaining extends Base {
+export default class FSTimeRemaining extends Base {
 
     getStyle = () => {
         return {
