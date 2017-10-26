@@ -56,12 +56,6 @@ export default class AppContainer extends React.Component {
             secondsLeft: sec
         });
 
-        if(sec === 0) {
-            this.setState({
-                ticking: false
-            });
-        }
-
     };
 
     onTimeReset = () => {
