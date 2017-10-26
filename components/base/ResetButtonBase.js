@@ -34,28 +34,31 @@ export default class ResetButtonBase extends React.Component {
         });
     };
 
+    getButtonStyle = () => {
+        return {
+            height: 60,
+            width: 200,
+            fontSize: 24,
+            margin: 10
+        };
+    };
+
     render = () => {
 
         if (this.state.enabled) {
             return (
-                <Button style={buttonStyle}
+                <Button style={this.getButtonStyle()}
                         onClick={this.props.resetTime}>Reset</Button>
             );
         }
 
         return (
-            <Button enabled={String(this.props.ticking)}
-                    style={buttonStyle} disabled>Reset</Button>
+            <Button style={this.getButtonStyle()} disabled>Reset</Button>
         );
     };
 }
 
-const buttonStyle = {
-    height: 60,
-    width: 200,
-    fontSize: 24,
-    margin: 10
-};
+
 
 ResetButtonBase.PropTypes = {
     ticking: PropTypes.bool.isRequired,
