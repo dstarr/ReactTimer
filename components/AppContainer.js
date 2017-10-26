@@ -28,8 +28,6 @@ export default class AppContainer extends React.Component {
             return;
         }
 
-
-
         if(this.state.ticking) {
             clearInterval(this.timer)
 
@@ -37,8 +35,6 @@ export default class AppContainer extends React.Component {
                 ticking: false
             });
         }
-
-
 
     };
 
@@ -87,8 +83,6 @@ export default class AppContainer extends React.Component {
                 />
 
                 <ModifyTimeButtons changeTime={this.onTimeChange}/>
-
-
             </div>
         );
     }

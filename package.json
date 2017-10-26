@@ -6,20 +6,22 @@
   "license": "UNLICENSED",
   "scripts": {
     "test": "mocha -r babel-core/register --recursive ./test/",
-    "start": "webpack --progress --colors --watch",
+    "watch": "webpack --progress --colors --watch",
     "build": "webpack",
-    "run": "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "path": "^0.12.7",
+    "prop-types": "latest",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
-    "prop-types": "latest"
+    "react-responsive": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",

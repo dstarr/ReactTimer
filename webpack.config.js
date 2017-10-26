@@ -18,7 +18,8 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
-                query: {compact: false}
+                query: {compact: false},
+
             },
 
             // Used for Bootstrap Less Source Files
