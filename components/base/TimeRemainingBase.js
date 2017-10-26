@@ -39,6 +39,17 @@ export default class TimeRemainingBase extends React.Component {
         });
 
     };
+
+    render = () => {
+
+        return (
+
+            <div style={this.getStyle()}>
+                {this.state.minutes}:{this.state.seconds}
+            </div>
+
+        );
+    }
 }
 
 TimeRemainingBase.PropTypes = {

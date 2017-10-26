@@ -65,6 +65,30 @@ export default class AppContainer extends React.Component {
         });
     };
 
+    render = () => {
+
+        return (
+            <div align="center">
+
+                <TimeRemaining seconds={this.state.secondsLeft}/>
+
+                <ResetButton ticking={this.state.ticking}
+                             secondsLeft={this.state.secondsLeft}
+                             resetTime={this.onTimeReset}
+                />
+
+                <StartStopButton ticking={this.state.ticking}
+                                 enabled={this.state.secondsLeft > 0}
+                                 onClicked={this.onStartButtonClick}
+                />
+
+                <ModifyTimeButtons changeTime={this.onTimeChange}/>
+
+
+            </div>
+        );
+    }
+
 }
 
 
