@@ -1,13 +1,13 @@
 import React from 'react';
 import Base from '../base/TimeRemainingBase';
 
-export default class FSTimeRemaining extends Base {
+export default class TimeRemaining extends Base {
 
     getStyle = () => {
         return {
             backgroundColor: '#cfcfcf',
-            color: '#2865A8',
-            fontSize: '1000%',
+            color: 'green',
+            fontSize: '2000%',
             fontWeight: 'bold'
         }
     };

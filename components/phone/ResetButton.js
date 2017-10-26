@@ -21,8 +21,8 @@ export default class ResetButton extends Base {
 }
 
 const buttonStyle = {
-    height: 60,
-    width: 200,
-    fontSize: 24,
+    height: 160,
+    width: 400,
+    fontSize: 48,
     margin: 10
 };

@@ -11,7 +11,6 @@ const Layout = () => (
             <DTAppContainer />
         </MediaQuery>
         <MediaQuery maxDeviceWidth={479} orientation="portrait">
-            <h1>You are a tablet or mobile phone in portrait</h1>
             <PhoneAppContainer />
         </MediaQuery>
     </div>

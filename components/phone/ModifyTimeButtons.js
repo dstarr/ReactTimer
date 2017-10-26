@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Base from '../base/ModifyTimeButtonsBase';
 
-export default class FSModifyTimeButtons extends Base {
+export default class ModifyTimeButtons extends Base {
 
     render = () => {
 
@@ -36,8 +36,8 @@ export default class FSModifyTimeButtons extends Base {
 }
 
 const buttonStyle = {
-    height: 60,
-    width: 200,
-    fontSize: 24,
+    height: 160,
+    width: 400,
+    fontSize: 48,
     margin: 10
 };
