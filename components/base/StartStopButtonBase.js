@@ -24,26 +24,28 @@ export default class StartStopButtonBase extends React.Component {
         });
     };
 
+    getButtonStyle = () => {
+        return {
+            height: 60,
+            width: 200,
+            fontSize: 24,
+            margin: 10
+        }
+    };
+
     render = () => {
 
         if (this.props.enabled)
             return (
-                <Button style={buttonStyle} onClick={this.props.onClicked}>{this.state.buttonTitle}</Button>
+                <Button style={this.getButtonStyle()} onClick={this.props.onClicked}>{this.state.buttonTitle}</Button>
             );
 
         return (
-            <Button style={buttonStyle} disabled>{this.state.buttonTitle}</Button>
+            <Button style={this.getButtonStyle()} disabled>{this.state.buttonTitle}</Button>
         );
 
     };
 }
-
-const buttonStyle = {
-    height: 60,
-    width: 200,
-    fontSize: 24,
-    margin: 10
-};
 
 StartStopButtonBase.PropTypes = {
     ticking: PropTypes.bool.isRequired,
