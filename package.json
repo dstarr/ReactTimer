@@ -6,9 +6,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "test": "mocha -r babel-core/register --recursive ./test/",
-    "watch": "webpack --progress --colors --watch",
+    "start": "webpack --progress --colors --watch",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "run": "webpack-dev-server"
   },
   "dependencies": {
     "path": "^0.12.7",
