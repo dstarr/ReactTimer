@@ -6,7 +6,7 @@ export default class TimeRemaining extends Base {
     getStyle = () => {
         return {
             backgroundColor: '#cfcfcf',
-            color: 'green',
+            color: '#2865A8',
             fontSize: '2000%',
             fontWeight: 'bold'
         }

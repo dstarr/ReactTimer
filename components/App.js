@@ -13,6 +13,9 @@ const Layout = () => (
         <MediaQuery maxDeviceWidth={479} orientation="portrait">
             <PhoneAppContainer />
         </MediaQuery>
+        <MediaQuery maxDeviceWidth={768} minDeviceWidth={480} orientation="portrait">
+            <PhoneAppContainer />
+        </MediaQuery>
     </div>
 );
 
