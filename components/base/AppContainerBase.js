@@ -1,9 +1,9 @@
 import React from 'react';
-import Well from 'react-bootstrap/lib/Well'
-import TimeRemaining from './TimeRemaining'
-import ModifyTimeButtons from './ModifyTimeButtons'
-import StartStopButton from './StartStopButton'
-import ResetButton from './ResetButton'
+import TimeRemaining from './TimeRemainingBase';
+import ResetButton from './ResetButtonBase';
+import StartStopButton from './StartStopButtonBase';
+import ModifyTimeButtons from './ModifyTimeButtonsBase';
+
 
 export default class AppContainer extends React.Component {
 
@@ -19,17 +19,31 @@ export default class AppContainer extends React.Component {
     onStartButtonClick = () => {
 
         if(!this.state.ticking) {
-            this.timer = setInterval(this.tickDown, 1000);
-
-            this.setState({
-                ticking: true
-            });
-
+            this.startTimer();
             return;
         }
 
+        this.stopTimer();
+
+    };
+
+    tickDown = () => {
+        this.onTimeChange(-1);
+    };
+
+    startTimer = () => {
+        this.timer = setInterval(this.tickDown, 1000);
+
+        this.setState({
+            ticking: true
+        });
+
+    };
+
+    stopTimer = () => {
+
         if(this.state.ticking) {
-            clearInterval(this.timer)
+            clearInterval(this.timer);
 
             this.setState({
                 ticking: false
@@ -38,16 +52,14 @@ export default class AppContainer extends React.Component {
 
     };
 
-    tickDown = () => {
-        this.onTimeChange(-1);
-    };
-
     onTimeChange = (seconds) => {
 
         let sec = this.state.secondsLeft + seconds;
 
-        if (sec < 0)
+        if (sec < 0) {
+            this.stopTimer();
             sec = 0;
+        }
 
         if (sec > 3600)
             sec = 3600;
@@ -55,6 +67,7 @@ export default class AppContainer extends React.Component {
         this.setState({
             secondsLeft: sec
         });
+
     };
 
     onTimeReset = () => {
@@ -67,11 +80,9 @@ export default class AppContainer extends React.Component {
 
         return (
             <div align="center">
-                <Well>
-                    <h1>
-                        <TimeRemaining seconds={this.state.secondsLeft}/>
-                    </h1>
-                </Well>
+
+                <TimeRemaining seconds={this.state.secondsLeft}/>
+
                 <ResetButton ticking={this.state.ticking}
                              secondsLeft={this.state.secondsLeft}
                              resetTime={this.onTimeReset}
@@ -83,9 +94,12 @@ export default class AppContainer extends React.Component {
                 />
 
                 <ModifyTimeButtons changeTime={this.onTimeChange}/>
+
+
             </div>
         );
     }
+
 }
 
 

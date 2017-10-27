@@ -19,7 +19,7 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
                 query: {compact: false},
-
+                exclude: /node_modules/
             },
 
             // Used for Bootstrap Less Source Files

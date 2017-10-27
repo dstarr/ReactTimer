@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/lib/Button';
 
-export default class ResetButton extends React.Component {
+export default class ResetButtonBase extends React.Component {
 
     constructor(props) {
         super(props);
@@ -31,29 +32,38 @@ export default class ResetButton extends React.Component {
         this.setState({
             enabled: false
         });
+    };
 
-
+    getButtonStyle = () => {
+        return {
+            height: 60,
+            width: 200,
+            fontSize: 24,
+            margin: 10
+        };
     };
 
     render = () => {
 
         if (this.state.enabled) {
             return (
-                <Button style={buttonStyle}
+                <Button style={this.getButtonStyle()}
                         onClick={this.props.resetTime}>Reset</Button>
             );
         }
 
         return (
-            <Button enabled={String(this.props.ticking)}
-                    style={buttonStyle} disabled>Reset</Button>
+            <Button style={this.getButtonStyle()} disabled>Reset</Button>
         );
-    }
+    };
 }
 
-const buttonStyle = {
-    height: 60,
-    width: 200,
-    fontSize: 24,
-    margin: 10
+
+
+ResetButtonBase.PropTypes = {
+    ticking: PropTypes.bool.isRequired,
+    enabled: PropTypes.bool.isRequired,
+    resetButton: PropTypes.func.isRequired
 };
+
+
