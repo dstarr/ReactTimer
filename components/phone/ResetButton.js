@@ -1,6 +1,6 @@
 import React from 'react';
 import Base from '../base/ResetButtonBase';
-import {Button} from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
 
 export default class ResetButton extends Base {
 
