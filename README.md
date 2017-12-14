@@ -1,3 +1,3 @@
-# ReactTimer
+# React Timer
 
-n experiment to build a timer for classroom training in React.
+An experiment to build a timer for classroom training in React.
